@@ -13,7 +13,9 @@ export default function Weather(props) {
                 setForecastInfo({
                     main: json.weather[0].main,
                     description: json.weather[0].description,
-                    temp: json.main.temp
+                    temp: json.main.temp,
+                    pressure: json.main.pressure,
+                    humidity: json.main.humidity
                 });
             })
             .catch((error) => {
@@ -26,7 +28,9 @@ export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
-        temp: 0
+        temp: 0,
+        pressure: 0,
+        humidity: 0
     })
     return (
         <View>
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         opacity: 0.5,
         width: '100%',
-        height: '50%'
+        height: '75%'
     },
 
 });
