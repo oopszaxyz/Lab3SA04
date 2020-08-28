@@ -6,10 +6,10 @@ import Carousel from 'react-native-snap-carousel';
 import { scrollInterpolator, animatedStyles } from './slideSetting';
 
 const availableZipItems = [
-    { place: 'Hatyai', code: '90110', background:require('../Image/hdy.jpg')},
+    { place: 'Hat Yai', code: '90110', background:require('../Image/hdy.jpg')},
     { place: 'Trang', code: '92000', background:require('../Image/trang.jpg')},
-    { place: 'Chiangmai', code: '50000', background:require('../Image/chiangmai.jpg')},
-    { place: 'Khonkaen', code: '40000', background:require('../Image/khonkaen.jpg')},
+    { place: 'Chiang Mai', code: '50000', background:require('../Image/chiangmai.jpg')},
+    { place: 'Khon Kaen', code: '40000', background:require('../Image/khonkaen.jpg')},
     { place: 'Chonburi', code: '20000', background:require('../Image/chonburi.jpg')},
     { place: 'Bangkok', code: '10600', background:require('../Image/bangkok.jpg')},
     { place: 'Satun', code: '91000', background:require('../Image/satoon.jpg')},
@@ -35,7 +35,7 @@ export default function ZipCodeScreen(){
     
     return (
           <SafeAreaView style={styles.slideStyle}>
-            <View style={{ flex: 1, flexDirection:'row', justifyContent: 'center', }}>
+            <View style={styles.viewSafeArea}>
                 <Carousel
                   layout={'default'}
                   data = {availableZipItems}
@@ -62,6 +62,12 @@ const styles = StyleSheet.create({
     backdrop: {
         width: '100%',
         height: '100%'
+    },
+
+    viewSafeArea:{ 
+        flex: 1, 
+        flexDirection:'row', 
+        justifyContent: 'center', 
     },
 
     slideStyle: {

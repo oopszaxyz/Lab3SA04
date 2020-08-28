@@ -7,8 +7,8 @@ export default function Forecast(props) {
             <Text style={styles.content}>{props.main}</Text>
             <Text style={styles.content2}>{props.description}</Text>
             <Text style={styles.content}>{props.temp}  ํC</Text>
-            <Text style={styles.content2}> Pressure is {props.pressure}</Text>
-            <Text style={styles.content3}> humidity is {props.humidity}</Text>
+            <Text style={styles.content2}> Pressure : {props.pressure}</Text>
+            <Text style={styles.content2}> Humidity : {props.humidity}</Text>
         </View>
     );
    }
@@ -26,15 +26,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'white',
     },
-
-    content3: {
-        paddingTop : 30,
-        fontSize: 25,
-        color: 'white',
-        fontWeight: 'bold'
-    },
-
-
+    
     Texts: {
         flexDirection: 'column',
         alignItems: 'center',

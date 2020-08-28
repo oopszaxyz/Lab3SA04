@@ -11,6 +11,7 @@ export default function Weather(props) {
             .then((response) => response.json())
             .then((json) => {
                 setForecastInfo({
+                    cityName: json.name,
                     main: json.weather[0].main,
                     description: json.weather[0].description,
                     temp: json.main.temp,
@@ -26,17 +27,20 @@ export default function Weather(props) {
 
 
     const [forecastInfo, setForecastInfo] = useState({
+        cityName: '-',
         main: '-',
         description: '-',
         temp: 0,
         pressure: 0,
         humidity: 0
     })
+
     return (
         <View>
             <ImageBackground source={require('../BackG.jpg')} style={styles.backdrop}>
                     <View style={styles.viewCon}>
                         <Text style={styles.content}>Zip Code is {props.zipCode}</Text>
+                        <Text style={styles.content}>{forecastInfo.cityName}</Text>
                         <Forecast {...forecastInfo}/>
                     </View>
             </ImageBackground>
@@ -63,7 +67,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         opacity: 0.5,
         width: '100%',
-        height: '75%'
+        height: '85%'
     },
 
 });
